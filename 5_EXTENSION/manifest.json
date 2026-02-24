@@ -1,0 +1,24 @@
+{
+    "manifest_version":3,
+    "name" : "Search the Selected",
+    "version" : "1.0.0",
+    "description": "Extension helps you search the selected text in a tab",
+    "icons" :{
+        "16":"icon16.png"
+    },
+    "permissions":["activeTab", "scripting" ,"tabs"],
+    "background":{
+        "service_worker": "background.js"
+    },
+    "content_scripts":[{
+        "matches":["<all_urls>"],
+        "js" : ["content.js"]
+    }],
+    "action":{
+        "default_icon":{
+            "16":"icon16.png"
+        },
+        "default_title":"Search the Selected",
+        "default_popup":"popup.html"
+    }
+}
